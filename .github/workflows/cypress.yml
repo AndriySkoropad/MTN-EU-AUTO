@@ -40,6 +40,7 @@ jobs:
 
       - name: Run Cypress tests and generate report
         id: cypress-test
+        working-directory: ${{ github.workspace }}  # Set the working directory to the root of your repository
         run: |
           # Run Cypress tests with Cypress Dashboard and video recording enabled
           mkdir -p cypress/temp_results
