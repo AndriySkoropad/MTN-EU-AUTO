@@ -5,7 +5,10 @@ describe('blog page', () => {
     it('should allow user to visit blog and article', () => {
       cy.visit('/');
   
-      
+      cy.wait(20000);
+
+      cy.get('[aria-label="Close form 1"]')
+        .click();
   
       cy.contains('.gr-footer__nav-link', 'BLOG')
         .click();

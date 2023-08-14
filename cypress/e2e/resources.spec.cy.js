@@ -4,7 +4,10 @@ describe('Resources page', () => {
     beforeEach(() => {
       cy.visit('/');
   
-      
+      cy.wait(20000);
+
+      cy.get('[aria-label="Close form 1"]')
+        .click();
     });
     
     it('should allow user to visit Resources page', () => {
