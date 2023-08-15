@@ -26,4 +26,10 @@
 Cypress.Commands.add('assertPageUrl', (url) => {
     cy.url()
       .should('equal', Cypress.config().baseUrl + url)
-  });
+});
+
+Cypress.Commands.add('saveTextValue', (value) => {
+  cy.wrap(value).as('savedTextValue');
+});
+
+
