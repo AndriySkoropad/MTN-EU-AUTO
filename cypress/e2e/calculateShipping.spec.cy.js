@@ -27,9 +27,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/baselight-wheel-attachment"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Ukraine');
@@ -62,9 +66,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/yale-zgr-35-1000-ratchet-lashing"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Albania');
@@ -97,9 +105,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/riggers-multi-tool"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Belgium');
@@ -132,9 +144,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/edelrid-fuse"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Denmark');
@@ -167,9 +183,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/lee-filter-010"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Italy');
@@ -187,7 +207,7 @@ describe('calculatig shipping', () => {
     
     });
 
-    it.only('should allow user to calculate shipping SPAIN', () => {
+    it('should allow user to calculate shipping SPAIN', () => {
     
         cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
           .click();
@@ -202,9 +222,13 @@ describe('calculatig shipping', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/phc-klever-x-change-w-double-head"]')
           .click();
+
+        cy.wait(2000);
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('Spain');
@@ -227,6 +251,8 @@ describe('calculatig shipping', () => {
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
+
+        cy.wait(2000);
     
         cy.get('#gr_shipping_calculator_country')
           .select('France');
@@ -236,6 +262,8 @@ describe('calculatig shipping', () => {
     
         cy.get('.gr-shipping-calc__submit')
           .click();
+
+        cy.wait(2000);
     
         cy.get('.gr-shipping-error')
           .should('contain.text', 'Enter a valid postal code for France');
