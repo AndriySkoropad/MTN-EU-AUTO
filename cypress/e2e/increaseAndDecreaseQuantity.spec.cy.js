@@ -75,22 +75,22 @@ describe('Increase and decrease quantity', () => {
         
     });
 
-    it('should add 1 product to the cart SECOND PRODUCT', () => {
+    it.only('should add 1 product to the cart SECOND PRODUCT', () => {
         cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
           .click();
     
         cy.wait(5000);
     
-        cy.contains('.gr-brands-list__item', 'Centurion')
+        cy.contains('.gr-brands-list__item', 'Columbus McKinnon')
           .click();
     
         cy.wait(10000);
     
         cy.get('h1')
-          .should('contain.text', 'Centurion Helmets/Hard Hats')
+          .should('contain.text', 'Columbus McKinnon')
     
         cy.get('div.gr-card-rich-product__details')
-          .find('a[href="/products/centurion-scalaxl-ear-defenders"]')
+          .find('a[href="/products/cm-next-gen-lodestar-electric-chain-hoist-2000kg"]')
           .click();
     
         cy.get('.product-form__submit')
@@ -101,7 +101,7 @@ describe('Increase and decrease quantity', () => {
           });
     
         cy.get('.gr-cart-item__link')
-          .should('contain.text', 'Centurion ScalaXL Ear Defenders [Advanced Noise Protection]');
+          .should('contain.text', 'CM Lodestar Electric Chain Hoist - 2000kg');
     
         cy.get('.quantity__input')
           .invoke('val').as('initialQuantity')
