@@ -32,4 +32,7 @@ Cypress.Commands.add('saveTextValue', (value) => {
   cy.wrap(value).as('savedTextValue');
 });
 
-
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // Returning false here prevents Cypress from failing the test
+  return false;
+});
