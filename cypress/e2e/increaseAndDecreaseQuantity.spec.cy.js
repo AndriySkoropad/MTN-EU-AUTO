@@ -75,7 +75,7 @@ describe('Increase and decrease quantity', () => {
         
     });
 
-    it.only('should add 1 product to the cart SECOND PRODUCT', () => {
+    it('should add 1 product to the cart SECOND PRODUCT', () => {
         cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
           .click();
     
