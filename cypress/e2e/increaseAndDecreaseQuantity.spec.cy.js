@@ -32,7 +32,7 @@ describe('Increase and decrease quantity', () => {
           .click()
           .then(() => {
             cy.wait(5000);
-            cy.get('#cart-icon-bubble').click()
+            cy.get('#cart-icon-bubble').click( {force: true} )
           });
     
         cy.get('.gr-cart-item__link')
