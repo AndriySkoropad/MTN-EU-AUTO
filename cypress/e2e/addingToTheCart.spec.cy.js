@@ -164,7 +164,7 @@ describe('adding to the cart', () => {
       .click()
       .then(() => {
         cy.wait(5000);
-        cy.get('#cart-icon-bubble').click().then(() => {
+        cy.get('#cart-icon-bubble').click( {force: true} ).then(() => {
           cy.get('@savedTextValue').then((savedValue) => {
             cy.get('span.price--end-include-tax')
               .invoke('text')
