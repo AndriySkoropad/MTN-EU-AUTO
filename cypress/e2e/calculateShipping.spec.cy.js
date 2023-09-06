@@ -168,7 +168,7 @@ describe('calculatig shipping', () => {
     
     });
 
-    it('should allow user to calculate shipping ITALY', () => {
+    it.only('should allow user to calculate shipping ITALY', () => {
     
         cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
           .click();
@@ -193,9 +193,12 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_country')
           .select('Italy');
+
+        cy.get('#gr_shipping_calculator_province')
+          .select('Verona');
     
         cy.get('#gr_shipping_calculator_zip')
-          .type('00199');
+          .type('37100');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
@@ -204,6 +207,8 @@ describe('calculatig shipping', () => {
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
+
+        
     
     });
 
