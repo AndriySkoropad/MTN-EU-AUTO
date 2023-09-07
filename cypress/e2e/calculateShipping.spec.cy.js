@@ -168,7 +168,7 @@ describe('calculatig shipping', () => {
     
     });
 
-    it.only('should allow user to calculate shipping ITALY', () => {
+    it('should allow user to calculate shipping ITALY', () => {
     
         cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
           .click();

@@ -76,7 +76,7 @@ describe('adding to the cart', () => {
 
   });
 
-  it.only('should proceed to checkout', () => {
+  it('should proceed to checkout', () => {
 
     cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
       .click();
@@ -203,29 +203,29 @@ describe('adding to the cart', () => {
   });
 
   it('should remove prooduct from the cart', () => {
-    cy.get('a[href="/pages/shop-our-brands"]')
+    cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
       .click();
 
     cy.wait(5000);
 
-    cy.contains('.gr-brands-list__item', 'Starret')
+    cy.contains('.gr-brands-list__item', 'Showtex')
       .click();
 
     cy.wait(10000);
 
     cy.get('div.gr-card-rich-product__details')
-      .find('a[href="/products/starrett-a014c-high-speed-steel-pilot-drill"]')
+      .find('a[href="/products/showtex-trussleeve-4-way-cross"]')
       .click();
 
     cy.get('.product-form__submit')
       .click()
       .then(() => {
         cy.wait(5000);
-        cy.get('a[href="/cart"]').click()
+        cy.get('#cart-icon-bubble').click( {force: true} )
       });
 
     cy.get('.gr-cart-item__link')
-      .should('contain.text', 'Starrett A014C High-Speed Steel Pilot Drill');
+      .should('contain.text', 'Showtex Trussleeve 4-Way Cross');
 
     cy.get('.gr-cart-item__del-btn')
       .click();
