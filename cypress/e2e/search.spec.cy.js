@@ -77,7 +77,7 @@ describe('search field', () => {
 
     cy.get('.gr-link')
       .contains(product.nameThird)
-      .click();
+      .click( {force: true} );
 
     cy.wait(4000);
 
