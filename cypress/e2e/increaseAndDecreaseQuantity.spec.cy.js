@@ -11,7 +11,7 @@ describe('Increase and decrease quantity', () => {
     });
 
     it('should add 1 product to the cart FIRST PRODUCT', () => {
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -76,8 +76,8 @@ describe('Increase and decrease quantity', () => {
     });
 
     it('should add 1 product to the cart SECOND PRODUCT', () => {
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
-          .click();
+      cy.contains('.gr-header-menu__link', 'Brands')
+      .click();
     
         cy.wait(5000);
     
@@ -141,8 +141,8 @@ describe('Increase and decrease quantity', () => {
     });
 
     it('should add 1 product to the cart THIRD PRODUCT', () => {
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
-          .click();
+      cy.contains('.gr-header-menu__link', 'Brands')
+      .click();
     
         cy.wait(5000);
     

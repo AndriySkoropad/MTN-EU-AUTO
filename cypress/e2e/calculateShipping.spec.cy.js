@@ -14,7 +14,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping UKRAINE', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -53,7 +53,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping ALBANIA', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -92,7 +92,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping BELGIUM', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -131,7 +131,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping DENMARK', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -170,7 +170,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping ITALY', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
@@ -214,7 +214,7 @@ describe('calculatig shipping', () => {
 
     it('should allow user to calculate shipping SPAIN', () => {
     
-        cy.get('a[href="https://shopmtn.eu/pages/shop-our-brands"]')
+        cy.contains('.gr-header-menu__link', 'Brands')
           .click();
     
         cy.wait(5000);
