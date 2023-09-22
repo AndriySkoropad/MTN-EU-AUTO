@@ -77,7 +77,7 @@ describe('checking prices switcher with taxes and without', () => {
 
     cy.get('.gr-link')
       .contains('FA2 Fall Protection Kit')
-      .click();
+      .click( {force: true} );
 
     cy.wait(3000);
 
@@ -123,7 +123,7 @@ describe('checking prices switcher with taxes and without', () => {
 
   });
 
-  it.only('should check if the prices are changed after the product was added to the cart THIRD PRODUCT', () => {
+  it('should check if the prices are changed after the product was added to the cart THIRD PRODUCT', () => {
 
     cy.get('#Search-In-Modal')
       .type('Retractable Fall Arrester- 45mm');

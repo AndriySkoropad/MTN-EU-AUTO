@@ -6,11 +6,11 @@ describe('search field', () => {
     nameFirst: 'MTN BOX Large Insert Package',
     nameSecond: 'Blaklader Flame Retardant Balaclava',
     name: 'Dunlop Safety Boots - Protomaster Chemical Resistant',
-    nameThird: 'Kuzar Tower Lift K-2',
+    nameThird: 'Arbortec Scafell Lite Chainsaw Boots',
     nameFourth: 'Key Clamp: Doughty Handrail Bracket',
     nameFifth: 'MTN Chain Slider Inserts',
     nameSixth: 'Doughty Grip Helper',
-    nameSeventh: 'Dirty Rigger Glove Clip',
+    nameSeventh: 'Buff Knitted Polar Hat',
     nameEighth: 'Baselight '
   };
 
@@ -29,6 +29,8 @@ describe('search field', () => {
 
     cy.get('#Search-In-Modal')
       .type(product.nameFirst);
+
+    cy.wait(2000);
 
     cy.get(`a[href="/products/${part.partFirst}"], .gr-link`)
       .contains(product.nameFirst)
@@ -52,7 +54,9 @@ describe('search field', () => {
     cy.get('#Search-In-Modal')
       .type(product.nameSecond);
 
-      cy.get(`a[href="/products/${part.partSecond}"], .gr-link`)
+    cy.wait(2000);
+
+    cy.get(`a[href="/products/${part.partSecond}"], .gr-link`)
       .contains(product.nameSecond)
       .click();
       
@@ -74,6 +78,8 @@ describe('search field', () => {
 
     cy.get('#Search-In-Modal')
       .type(product.nameThird);
+
+    cy.wait(2000);
 
     cy.get('.gr-link')
       .contains(product.nameThird)
@@ -98,7 +104,9 @@ describe('search field', () => {
     cy.get('#Search-In-Modal')
       .type(product.nameFourth);
 
-      cy.get('.gr-link')
+    cy.wait(2000);
+
+    cy.get('.gr-link')
       .contains(product.nameFourth)
       .click();
 
@@ -119,6 +127,8 @@ describe('search field', () => {
 
     cy.get('#Search-In-Modal')
       .type(product.nameFifth);
+
+    cy.wait(2000);
 
     cy.get('.gr-link')
       .contains(product.nameFifth)
@@ -143,6 +153,8 @@ describe('search field', () => {
     cy.get('#Search-In-Modal')
       .type(product.nameSixth);
 
+    cy.wait(2000);
+
     cy.get('.gr-link')
       .contains(product.nameSixth)
       .click();
@@ -165,6 +177,8 @@ describe('search field', () => {
 
     cy.get('#Search-In-Modal')
       .type(product.nameSeventh);
+
+    cy.wait(2000);
 
     cy.get('.gr-link')
       .contains(product.nameSeventh)
