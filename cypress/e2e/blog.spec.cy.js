@@ -7,7 +7,7 @@ describe('blog page', () => {
   
       cy.wait(20000);
 
-      cy.get('[aria-label="Close form 1"]')
+      cy.get('[aria-label="Close dialog 1"]')
         .click();
   
       cy.contains('.gr-footer__nav-link', 'BLOG')
