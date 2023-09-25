@@ -41,6 +41,8 @@ describe('search field', () => {
     cy.get('[itemprop="name"]')
       .click({force: true});
 
+    cy.wait(2000);
+
     cy.contains('span', product.nameFirst)
       .should('exist');
 
@@ -64,6 +66,8 @@ describe('search field', () => {
 
     cy.get('[itemprop="name"]')
       .click({force: true});
+
+    cy.wait(2000);
 
     cy.contains('span', product.nameSecond)
       .should('exist');
@@ -90,6 +94,8 @@ describe('search field', () => {
     cy.get('[itemprop="name"]')
       .click({force: true});
 
+    cy.wait(2000);
+
     cy.contains('span', product.nameThird)
       .should('exist');
 
@@ -115,6 +121,8 @@ describe('search field', () => {
     cy.get('[itemprop="name"]')
       .click({force: true});
 
+    cy.wait(2000);
+
     cy.contains('span', product.nameFourth).should('exist');
 
     cy.get('.gr-product__title')
@@ -138,6 +146,8 @@ describe('search field', () => {
 
     cy.get('[itemprop="name"]')
       .click({force: true});
+
+    cy.wait(2000);
 
     cy.contains('span', product.nameFifth)
       .should('exist');
@@ -164,6 +174,8 @@ describe('search field', () => {
     cy.get('[itemprop="name"]')
       .click({force: true});
 
+    cy.wait(2000);
+
     cy.contains('span', product.nameSixth)
       .should('exist');
 
@@ -188,6 +200,8 @@ describe('search field', () => {
 
     cy.get('[itemprop="name"]')
       .click({force: true});
+
+    cy.wait(2000);
 
     cy.contains('span', product.nameSeventh)
       .should('exist');
