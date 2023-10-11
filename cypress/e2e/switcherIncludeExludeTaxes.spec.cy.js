@@ -14,19 +14,27 @@ describe('checking prices switcher with taxes and without', () => {
   });  
 
   it('should check if the prices are changed after the product was added to the cart FIRST PRODUCT', () => {
-    cy.get('#Search-In-Modal')
-      .type('Safety Gloves');
-
+    cy.contains('.gr-header-menu__link', 'Brands')
+      .click();
+    
     cy.wait(5000);
-
-    cy.get('.gr-link')
-      .contains('Dirty Rigger Gloves - Comfort Fit™ (General Use)')
+    
+    cy.contains('.gr-brands-list__item', 'Bravi')
+      .click();
+    
+    cy.wait(10000);
+    
+    cy.get('h1')
+      .should('contain.text', 'Bravi')
+    
+    cy.get('div.gr-card-rich-product__details')
+      .find('a[href="/products/sprint-tl"]')
       .click();
 
     cy.wait(3000);
 
     cy.get('h1')
-      .should('contain.text', 'Dirty Rigger Gloves - Comfort Fit™ (General Use)')
+      .should('contain.text', 'Bravi Sprint TL')
 
     let savedNumericPart; // Define the variable in a higher scope
 
@@ -70,14 +78,22 @@ describe('checking prices switcher with taxes and without', () => {
   
   it('should check if the prices are changed after the product was added to the cart SECOND PRODUCT', () => {
 
-    cy.get('#Search-In-Modal')
-      .type('Safety Harnesses');
-
+    cy.contains('.gr-header-menu__link', 'Brands')
+      .click();
+    
     cy.wait(5000);
-
-    cy.get('.gr-link')
-      .contains('FA2 Fall Protection Kit')
-      .click( {force: true} );
+    
+    cy.contains('.gr-brands-list__item', 'FA2')
+      .click();
+    
+    cy.wait(10000);
+    
+    cy.get('h1')
+      .should('contain.text', 'FA2')
+    
+    cy.get('div.gr-card-rich-product__details')
+      .find('a[href="/products/fa2-fall-protection-package"]')
+      .click();
 
     cy.wait(3000);
 
@@ -125,19 +141,27 @@ describe('checking prices switcher with taxes and without', () => {
 
   it('should check if the prices are changed after the product was added to the cart THIRD PRODUCT', () => {
 
-    cy.get('#Search-In-Modal')
-      .type('Retractable Fall Arrester- 45mm');
-
+    cy.contains('.gr-header-menu__link', 'Brands')
+      .click();
+    
     cy.wait(5000);
-
-    cy.get('.gr-link')
-      .contains('Retractable Fall Arrester- 45mm Webbing (2.26m L)')
+    
+    cy.contains('.gr-brands-list__item', 'VMB')
+      .click();
+    
+    cy.wait(10000);
+    
+    cy.get('h1')
+      .should('contain.text', 'VMB')
+    
+    cy.get('div.gr-card-rich-product__details')
+      .find('a[href="/products/vmb-tower-lift-tl054"]')
       .click();
 
     cy.wait(3000);
 
     cy.get('h1')
-      .should('contain.text', 'Retractable Fall Arrester- 45mm Webbing (2.26m L)')
+      .should('contain.text', 'VMB Tower Lift - TL054')
 
     let savedNumericPart;
 

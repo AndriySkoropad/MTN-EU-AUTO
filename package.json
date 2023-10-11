@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^12.17.3"
+  "devDependencies": {
+    "cypress": "^13.3.0"
   }
 }

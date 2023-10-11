@@ -17,10 +17,10 @@ describe('adding to the cart', () => {
     cy.get('#cart-icon-bubble')
       .click();
 
-    cy.get('h1')
+    cy.get('h2')
       .should('contain.text', 'Your cart is empty');
 
-    cy.contains('.gr-link', 'Continue shopping')
+    cy.contains('.gr-btn--outline', 'Continue shopping')
       .should('exist');
   });
 
@@ -60,6 +60,9 @@ describe('adding to the cart', () => {
 
     cy.get('#cart-icon-bubble')
       .click();
+    cy.contains('.gr-cart__checkout-btn', 'View cart ')
+      .click( {force: true} );
+    cy.wait(3000);
     cy.assertPageUrl('/cart');
     cy.contains('h1', 'Your cart')
       .should('exist');
@@ -164,7 +167,8 @@ describe('adding to the cart', () => {
       .click()
       .then(() => {
         cy.wait(5000);
-        cy.get('#cart-icon-bubble').click( {force: true} ).then(() => {
+        cy.contains('.gr-cart__checkout-btn', 'View cart ')
+          .click( {force: true} ).then(() => {
           cy.get('@savedTextValue').then((savedValue) => {
             cy.get('span.price--end-include-tax')
               .invoke('text')
@@ -233,10 +237,10 @@ describe('adding to the cart', () => {
     cy.get('.gr-cart-item__link')
       .should('not.exist');
 
-    cy.contains('h1', 'Your cart is empty')
+    cy.contains('h2', 'Your cart is empty')
       .should('exist');
 
-    cy.contains('.gr-link', 'Continue shopping')
+    cy.contains('.gr-btn--outline', 'Continue shopping')
       .should('exist');
 
   });
