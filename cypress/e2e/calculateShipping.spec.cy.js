@@ -252,7 +252,7 @@ describe('calculatig shipping', () => {
     });
 
     it('should send error message when the user tries to type invalid postcdoe', () => {
-        cy.visit('https://shopmtn.eu/products/visor-holder-safe-3');
+        cy.visit('https://shopmtn.eu/products/copy-of-rock-exotica-akimbo-ascender');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
