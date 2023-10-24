@@ -181,7 +181,7 @@ describe('calculatig shipping', () => {
         cy.wait(10000);
     
         cy.get('div.gr-card-rich-product__details')
-          .find('a[href="/products/lee-filter-010"]')
+          .find('a[href="/products/lee-filter-241"]')
           .click();
 
         cy.wait(2000);
