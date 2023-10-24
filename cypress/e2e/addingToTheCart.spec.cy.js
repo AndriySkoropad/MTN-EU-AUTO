@@ -39,6 +39,8 @@ describe('adding to the cart', () => {
     cy.assertPageUrl('/collections/buff');
     cy.contains('h1', 'Buff')
       .should('exist');
+
+    cy.wait(10000);
     
     cy.contains('a[href="/products/buff-flame-resistant-neck-tube"]','Buff Flame Resistant Neck Tube')
       .click();

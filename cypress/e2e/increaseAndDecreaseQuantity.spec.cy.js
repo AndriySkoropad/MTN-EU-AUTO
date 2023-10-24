@@ -156,16 +156,16 @@ describe('Increase and decrease quantity', () => {
     
         cy.wait(5000);
     
-        cy.contains('.gr-brands-list__item', 'Fiskars')
+        cy.contains('.gr-brands-list__item', 'Buff')
           .click();
     
         cy.wait(10000);
     
         cy.get('h1')
-          .should('contain.text', 'Fiskars')
+          .should('contain.text', 'Buff')
     
         cy.get('div.gr-card-rich-product__details')
-          .find('a[href="/products/fiskars-x17-splitting-axe"]')
+          .find('a[href="/products/buff-windproof-neckwear"]')
           .click();
     
         cy.get('.product-form__submit')
@@ -176,7 +176,7 @@ describe('Increase and decrease quantity', () => {
           });
     
         cy.get('.gr-cart-item__link')
-          .should('contain.text', 'Fiskars x17 Splitting Axe 60cm');
+          .should('contain.text', 'Buff Windproof Neckwear');
     
         cy.get('.quantity__input')
           .invoke('val').as('initialQuantity')
