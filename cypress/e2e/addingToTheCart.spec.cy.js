@@ -34,19 +34,19 @@ describe('adding to the cart', () => {
 
     cy.wait(5000);
 
-    cy.contains('.gr-brands-list__item', 'Buff')
+    cy.contains('.gr-brands-list__item', 'Camlok')
       .click();
-    cy.assertPageUrl('/collections/buff');
-    cy.contains('h1', 'Buff')
+    cy.assertPageUrl('/collections/camlok');
+    cy.contains('h1', 'Camlok')
       .should('exist');
 
     cy.wait(10000);
     
-    cy.contains('a[href="/products/buff-flame-resistant-neck-tube"]','Buff Flame Resistant Neck Tube')
+    cy.contains('a[href="/products/yale-tkg-vhs-crane-forks"]','Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG')
       .click();
-    cy.assertPageUrl('/products/buff-flame-resistant-neck-tube');
+    cy.assertPageUrl('/products/yale-tkg-vhs-crane-forks?variant=6125164298272');
     cy.get('h1')
-      .should('contain.text', 'Buff Flame Resistant Neck Tube');
+      .should('contain.text', 'Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG');
     cy.get('.gr-product-media')
       .should('exist');
     cy.get('.gr-price__container')
@@ -61,7 +61,7 @@ describe('adding to the cart', () => {
       .should('exist');
 
     cy.get('#cart-icon-bubble')
-      .click();
+      .click( {force: true} );
     cy.contains('.gr-cart__checkout-btn', 'View cart ')
       .click( {force: true} );
     cy.wait(3000);
@@ -71,7 +71,7 @@ describe('adding to the cart', () => {
     cy.contains('#checkout', 'Check out')
       .should('exist');
     cy.get('.shopify-section')
-      .contains('Buff Flame Resistant Neck Tube');
+      .contains('Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG');
     cy.contains('.gr-link', 'Continue shopping')
       .should('exist');
     cy.get('.cart__dynamic-checkout-buttons')
