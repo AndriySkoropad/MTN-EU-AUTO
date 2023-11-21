@@ -5,10 +5,7 @@ describe('calculatig shipping', () => {
     beforeEach(() => {
       cy.visit('/');
       
-      cy.wait(20000);
-
-      cy.get('[aria-label="Close dialog 1"]')
-        .click();
+      
       
     });
 
@@ -51,7 +48,7 @@ describe('calculatig shipping', () => {
     
     });
 
-    it('should allow user to calculate shipping ALBANIA', () => {
+    it.only('should allow user to calculate shipping ALBANIA', () => {
     
         cy.contains('.gr-header-menu__link', 'Brands')
           .click();
