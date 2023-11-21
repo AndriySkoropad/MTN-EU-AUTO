@@ -12,6 +12,10 @@ module.exports = defineConfig({
   },
   e2e: {
     baseUrl: "https://shopmtn.eu",
+    retries: {
+      runMode: 2,
+      openMode: 2
+    },
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
