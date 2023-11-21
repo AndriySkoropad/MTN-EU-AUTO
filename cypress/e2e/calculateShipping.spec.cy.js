@@ -48,7 +48,7 @@ describe('calculatig shipping', () => {
     
     });
 
-    it.only('should allow user to calculate shipping ALBANIA', () => {
+    it('should allow user to calculate shipping ALBANIA', () => {
     
         cy.contains('.gr-header-menu__link', 'Brands')
           .click();
