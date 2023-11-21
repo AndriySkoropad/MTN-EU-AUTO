@@ -6,7 +6,10 @@ describe('calculatig shipping', () => {
       cy.visit('/');
       
       
-      
+      cy.wait(20000);
+  
+      cy.get('[aria-label="Close dialog 1"]')
+          .click();
     });
 
     it('should allow user to calculate shipping UKRAINE', () => {
