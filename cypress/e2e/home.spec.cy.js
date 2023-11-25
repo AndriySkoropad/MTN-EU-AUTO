@@ -26,20 +26,20 @@ describe('home page', () => {
       .click();
 
 
-    cy.get('.gr-header-menu')
-      .contains('a', 'Workwear');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Height Safety & PPE');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Tools & Lighting');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Industrial');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Entertainment');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Brands');
-    cy.get('.gr-header-menu')
-      .contains('a', 'Special Offers');
+    cy.contains('.gr-header-menu', 'Workwear')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Height Safety & PPE')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Tools & Lighting')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Industrial')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Entertainment')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Brands')
+      .should('exist');
+    cy.contains('.gr-header-menu', 'Special Offers')
+      .should('exist');
     
 
     cy.get('.gr-slider-wrapper')
@@ -66,40 +66,48 @@ describe('home page', () => {
     cy.get('#cart-icon-bubble')
       .should('contain.text', 'Cart')
 
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'HOME');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'OUR STORY');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'RFQ');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'RESOURCES');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'CONTACT');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'BLOG');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'FEEDBACK');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'TERMS OF USE');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'TERMS OF SALE');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'RETURN POLICY');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'PRIVACY POLICY');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'ACCOUNT SIGN IN');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'VIEW CART');
-    cy.get('.gr-footer__navigation')
-      .contains('a', 'FAQS');
-    cy.get('.gr-with-icon')
-      .contains('a', 'Contact Us');
-    cy.get('.gr-btn')
-      .contains('a', 'Request A Quote');
-    cy.get('.gr-footer__actions')
-      .contains('Click Here to Sign Up');
+    cy.contains('.gr-footer__navigation', 'HOME')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'OUR STORY')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'RFQ')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'RESOURCES')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'CONTACT')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'BLOG')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'FEEDBACK')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'TERMS OF USE')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'TERMS OF SALE')
+      .should('exist');
+    cy.contains('.gr-footer__navigation','RETURN POLICY')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'PRIVACY POLICY')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'ACCOUNT SIGN IN')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'VIEW CART')
+      .should('exist');
+    cy.contains('.gr-footer__navigation', 'FAQS')
+      .should('exist');
+    cy.contains('.gr-with-icon', 'Contact Us')
+      .should('exist');
+    cy.contains('.gr-btn', 'Request A Quote')
+      .should('exist');
+    cy.contains('.gr-footer__actions', 'Click Here to Sign Up')
+      .should('exist');
+
+    cy.contains('.gr-footer__nav', 'QUICK LINKS')
+      .find('li')
+      .should('have.length', 7);
+
+    cy.contains('.gr-footer__nav', 'CUSTOMER SERVICE')
+      .find('li')
+      .should('have.length', 7);
 
 
     cy.get('.icon-facebook')

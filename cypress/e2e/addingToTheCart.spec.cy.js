@@ -70,8 +70,8 @@ describe('adding to the cart', () => {
       .should('exist');
     cy.contains('#checkout', 'Check out')
       .should('exist');
-    cy.get('.shopify-section')
-      .contains('Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG');
+    cy.contains('.shopify-section', 'Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG')
+      .should('exist');
     cy.contains('.gr-link', 'Continue shopping')
       .should('exist');
     cy.get('.cart__dynamic-checkout-buttons')
