@@ -15,11 +15,15 @@ describe('Increase and decrease quantity', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Gutster')
           .click();
+        
+        cy.wait('@gettingBrand');
     
-        cy.wait(10000);
+        //cy.wait(10000);
     
         cy.get('h1')
           .should('contain.text', 'Gutster')
@@ -27,15 +31,21 @@ describe('Increase and decrease quantity', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/gutster-small-nail-puller"]')
           .click();
+
+        cy.intercept('GET', '/cart.json').as('addingToCart');
     
         cy.get('.product-form__submit')
           .click()
           .then(() => {
-            cy.wait(5000);
+            cy.wait('@addingToCart');
+            //cy.wait(5000);
+            cy.intercept('GET', '/cart.json').as('checkingCart');
             cy.contains('.gr-cart__checkout-btn', 'View cart ').click( {force: true} )
           });
 
-        cy.wait(2000);  
+        cy.wait('@checkingCart')
+        
+        //cy.wait(2000);  
     
         cy.get('.gr-cart-item__link')
           .should('contain.text', 'Gutster Small Nail Puller 76cm');
@@ -46,9 +56,13 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
+            cy.intercept('GET', '/cart.js').as('changingQuantity');
+
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait(3000);
+            cy.wait('@changingQuantity');
+
+            //cy.wait(3000);
         
             // Get the updated quantity
             cy.get('.quantity__input')
@@ -62,10 +76,14 @@ describe('Increase and decrease quantity', () => {
                 expect(parsedUpdatedQuantity).to.equal(parsedInitialQuantity + 1);
     
                 ///cy.wait(5000);
+
+                cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait(3000);
+                cy.wait('@changingQuantity');
+
+                //cy.wait(3000);
     
                 // Get the updated quantity after decrease
                 cy.get('.quantity__input').invoke('val').as('decreasedQuantity')
@@ -86,11 +104,15 @@ describe('Increase and decrease quantity', () => {
       .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Columbus McKinnon')
           .click();
+
+        cy.wait('@gettingBrand');
     
-        cy.wait(10000);
+        //cy.wait(10000);
     
         cy.get('h1')
           .should('contain.text', 'Columbus McKinnon')
@@ -98,13 +120,19 @@ describe('Increase and decrease quantity', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/cm-next-gen-lodestar-electric-chain-hoist-2000kg"]')
           .click();
+
+        cy.intercept('GET', '/cart.json').as('addingToCart');
     
         cy.get('.product-form__submit')
           .click()
           .then(() => {
-            cy.wait(5000);
+            cy.wait('@addingToCart');
+            //cy.wait(5000);
+            cy.intercept('GET', '/cart.json').as('checkingCart');
             cy.contains('.gr-cart__checkout-btn', 'View cart ').click( {force: true} )
           });
+
+        cy.wait('@checkingCart');
     
         cy.get('.gr-cart-item__link')
           .should('contain.text', 'CM Lodestar Electric Chain Hoist - 2000kg');
@@ -115,9 +143,13 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
+            cy.intercept('GET', '/cart.js').as('changingQuantity');
+
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait(3000);
+            cy.wait('@changingQuantity')
+
+            //cy.wait(3000);
         
             // Get the updated quantity
             cy.get('.quantity__input')
@@ -131,10 +163,14 @@ describe('Increase and decrease quantity', () => {
                 expect(parsedUpdatedQuantity).to.equal(parsedInitialQuantity + 1);
     
                 ///cy.wait(5000);
+
+                cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait(3000);
+                cy.wait('@changingQuantity');
+
+                //cy.wait(3000);
     
                 // Get the updated quantity after decrease
                 cy.get('.quantity__input').invoke('val').as('decreasedQuantity')
@@ -155,11 +191,15 @@ describe('Increase and decrease quantity', () => {
       .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Buff')
           .click();
+
+        cy.wait('@gettingBrand')
     
-        cy.wait(10000);
+        //cy.wait(10000);
     
         cy.get('h1')
           .should('contain.text', 'Buff')
@@ -167,13 +207,19 @@ describe('Increase and decrease quantity', () => {
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/buff-windproof-neckwear"]')
           .click();
+
+        cy.intercept('GET', '/cart.json').as('addingToCart');
     
         cy.get('.product-form__submit')
           .click()
           .then(() => {
-            cy.wait(5000);
+            cy.wait('@addingToCart');
+            //cy.wait(5000);
+            cy.intercept('GET', '/cart.json').as('checkingCart');
             cy.contains('.gr-cart__checkout-btn', 'View cart ').click( {force: true} )
           });
+
+        cy.wait('@checkingCart');
     
         cy.get('.gr-cart-item__link')
           .should('contain.text', 'Buff Windproof Neckwear');
@@ -184,9 +230,13 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
+            cy.intercept('GET', '/cart.js').as('changingQuantity');
+
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait(3000);
+            cy.wait('@changingQuantity');
+
+            //cy.wait(3000);
         
             // Get the updated quantity
             cy.get('.quantity__input')
@@ -200,10 +250,14 @@ describe('Increase and decrease quantity', () => {
                 expect(parsedUpdatedQuantity).to.equal(parsedInitialQuantity + 1);
     
                 ///cy.wait(5000);
+
+                cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait(3000);
+                cy.wait('@changingQuantity')
+
+                //cy.wait(3000);
     
                 // Get the updated quantity after decrease
                 cy.get('.quantity__input').invoke('val').as('decreasedQuantity')

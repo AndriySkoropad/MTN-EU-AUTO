@@ -12,7 +12,7 @@ describe('should filter products', () => {
     
     });  
 
-    it('should filter by brand', () => {
+    it.only('should filter by brand', () => {
  
       cy.contains('.gr-header-menu__link', 'Tools & Lighting')
         .click();
@@ -43,7 +43,7 @@ describe('should filter products', () => {
   
       cy.contains('.gr-checkbox-wrap', 'Berger')
         .click();
-  
+
       cy.get('body')
         .click('center', { force: true });
   
@@ -118,7 +118,7 @@ describe('should filter products', () => {
     
     });
 
-    it.only('should filter via type', () => {
+    it('should filter via type', () => {
     
         cy.contains('.gr-header-menu__link', 'Tools & Lighting')
           .click();

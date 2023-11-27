@@ -34,13 +34,15 @@ describe('adding to the cart', () => {
 
     cy.wait(5000);
 
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
+
     cy.contains('.gr-brands-list__item', 'Camlok')
       .click();
     cy.assertPageUrl('/collections/camlok');
     cy.contains('h1', 'Camlok')
       .should('exist');
 
-    cy.wait(10000);
+    cy.wait('@gettingBrand')
     
     cy.contains('a[href="/products/yale-tkg-vhs-crane-forks"]','Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG')
       .click();
@@ -62,9 +64,10 @@ describe('adding to the cart', () => {
 
     cy.get('#cart-icon-bubble')
       .click( {force: true} );
+    cy.intercept('GET', '/cart.json').as('checkingCart');
     cy.contains('.gr-cart__checkout-btn', 'View cart ')
       .click( {force: true} );
-    cy.wait(3000);
+    cy.wait('@checkingCart');
     cy.assertPageUrl('/cart');
     cy.contains('h1', 'Your cart')
       .should('exist');
@@ -88,10 +91,12 @@ describe('adding to the cart', () => {
 
     cy.wait(5000);
 
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
+
     cy.contains('.gr-brands-list__item', 'NEOFEU')
       .click();
 
-    cy.wait(10000);
+    cy.wait('@gettingBrand');
 
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/neofeu-harnais-nus77a"]')
@@ -165,10 +170,13 @@ describe('adding to the cart', () => {
         }
     });
 
+    cy.intercept('GET', '/cart.json').as('addingToCart');
+
     cy.get('.product-form__submit')
       .click()
       .then(() => {
-        cy.wait(5000);
+        cy.wait('@addingToCart');
+        cy.intercept('GET', '/cart.json').as('checkingCart');
         cy.contains('.gr-cart__checkout-btn', 'View cart ')
           .click( {force: true} ).then(() => {
           cy.get('@savedTextValue').then((savedValue) => {
@@ -183,7 +191,7 @@ describe('adding to the cart', () => {
         });
     });
 
-    cy.wait(5000);
+    cy.wait('@checkingCart');
    
     cy.get('#checkout')
       .click();
@@ -210,23 +218,27 @@ describe('adding to the cart', () => {
 
   it('should remove prooduct from the cart', () => {
     cy.contains('.gr-header-menu__link', 'Brands')
-      .click();
-
+      .click(); 
+      
     cy.wait(5000);
+
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
 
     cy.contains('.gr-brands-list__item', 'Showtex')
       .click();
 
-    cy.wait(10000);
+    cy.wait('@gettingBrand');
 
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/showtex-trussleeve-4-way-cross"]')
       .click();
 
+    cy.intercept('GET', '/cart.json').as('addingToCart');
+
     cy.get('.product-form__submit')
       .click()
       .then(() => {
-        cy.wait(5000);
+        cy.wait('@addingToCart');
         cy.get('#cart-icon-bubble').click( {force: true} )
       });
 

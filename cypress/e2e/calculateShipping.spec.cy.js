@@ -18,17 +18,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Baselight')
           .click();
-    
-        cy.wait(10000);
+
+        cy.wait('@gettingBrand');
+
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/baselight-wheel-attachment"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -40,11 +44,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('30511');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -57,17 +63,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Beneca')
           .click();
-    
-        cy.wait(10000);
+
+        cy.wait('@gettingBrand');
+
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/yale-zgr-35-1000-ratchet-lashing"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -79,11 +89,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('1000');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -96,17 +108,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Dirty Rigger')
           .click();
-    
-        cy.wait(10000);
+
+        cy.wait('@gettingBrand');
+
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/riggers-multi-tool"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -118,11 +134,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('7943');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -135,17 +153,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Edeldrid')
           .click();
-    
-        cy.wait(10000);
+
+        cy.wait('@gettingBrand');
+
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/edelrid-fuse"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -157,11 +179,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('2300');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -174,17 +198,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'Lee Filters')
           .click();
+
+        cy.wait('@gettingBrand');
     
-        cy.wait(10000);
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/lee-filter-241"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -199,11 +227,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('37100');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -218,17 +248,21 @@ describe('calculatig shipping', () => {
           .click();
     
         cy.wait(5000);
+
+        cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
         cy.contains('.gr-brands-list__item', 'PHC')
           .click();
-    
-        cy.wait(10000);
+
+        cy.wait('@gettingBrand');
+
+        cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/phc-klever-x-change-w-double-head"]')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -240,11 +274,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('08830');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(5000);
+        cy.wait('@calculatingShipping');
     
         cy.get('.gr-shipping-calc__response')
           .should('exist');
@@ -264,11 +300,13 @@ describe('calculatig shipping', () => {
     
         cy.get('#gr_shipping_calculator_zip')
           .type('jfkd38393');
+
+        cy.intercept('GET', '/cart/shipping_rates.json?*').as('calculatingShipping');
     
         cy.get('.gr-shipping-calc__submit')
           .click();
 
-        cy.wait(2000);
+        cy.wait('@calculatingShipping')
     
         cy.get('.gr-shipping-error')
           .should('contain.text', 'Enter a valid postal code for France');
