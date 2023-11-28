@@ -56,11 +56,10 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
-            cy.intercept('GET', '/cart.js').as('changingQuantity');
 
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait('@changingQuantity');
+            cy.wait(3000);
 
             //cy.wait(3000);
         
@@ -76,12 +75,10 @@ describe('Increase and decrease quantity', () => {
                 expect(parsedUpdatedQuantity).to.equal(parsedInitialQuantity + 1);
     
                 ///cy.wait(5000);
-
-                cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait('@changingQuantity');
+                cy.wait(3000);
 
                 //cy.wait(3000);
     
@@ -143,13 +140,13 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
-            cy.intercept('GET', '/cart.js').as('changingQuantity');
+            //cy.intercept('GET', '/cart.js').as('changingQuantity');
 
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait('@changingQuantity')
+            //cy.wait('@changingQuantity')
 
-            //cy.wait(3000);
+            cy.wait(3000);
         
             // Get the updated quantity
             cy.get('.quantity__input')
@@ -164,13 +161,13 @@ describe('Increase and decrease quantity', () => {
     
                 ///cy.wait(5000);
 
-                cy.intercept('GET', '/cart.js').as('changingQuantity');
+                //cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait('@changingQuantity');
+                //cy.wait('@changingQuantity');
 
-                //cy.wait(3000);
+                cy.wait(3000);
     
                 // Get the updated quantity after decrease
                 cy.get('.quantity__input').invoke('val').as('decreasedQuantity')
@@ -230,13 +227,13 @@ describe('Increase and decrease quantity', () => {
             cy.log('Initial Quantity:', initialQuantity);
         
             // Click the button to increase the quantity
-            cy.intercept('GET', '/cart.js').as('changingQuantity');
+            //cy.intercept('GET', '/cart.js').as('changingQuantity');
 
             cy.get('button[name="plus"]').last().click( {force: true} );
 
-            cy.wait('@changingQuantity');
+            //cy.wait('@changingQuantity');
 
-            //cy.wait(3000);
+            cy.wait(3000);
         
             // Get the updated quantity
             cy.get('.quantity__input')
@@ -251,13 +248,13 @@ describe('Increase and decrease quantity', () => {
     
                 ///cy.wait(5000);
 
-                cy.intercept('GET', '/cart.js').as('changingQuantity');
+                //cy.intercept('GET', '/cart.js').as('changingQuantity');
     
                 cy.get('button[name="minus"]').last().click( {force: true} );
 
-                cy.wait('@changingQuantity')
+                //cy.wait('@changingQuantity')
 
-                //cy.wait(3000);
+                cy.wait(3000);
     
                 // Get the updated quantity after decrease
                 cy.get('.quantity__input').invoke('val').as('decreasedQuantity')
