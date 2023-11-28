@@ -29,10 +29,10 @@ describe('blog page', () => {
       cy.get('.gr-pagination__list')
         .should('exist');
   
-      cy.contains('.gr-article-card__heading', 'Everything You Need to Know to Choose The Right Pallet Truck - 10 Top Tips!')
+      cy.contains('.gr-article-card__heading', 'MTN SHOP Welcomes Grabo To The Family')
         .click();
   
-      cy.contains('h1', 'Everything You Need to Know to Choose The Right Pallet Truck - 10 Top Tips!')
+      cy.contains('h1', 'MTN SHOP Welcomes Grabo To The Family')
         .should('exist');
   
       cy.get('.gr-author-info')
