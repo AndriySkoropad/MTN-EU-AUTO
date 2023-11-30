@@ -18,20 +18,29 @@ describe('checking prices switcher with taxes and without', () => {
       .click();
     
     cy.wait(5000);
+
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
     cy.contains('.gr-brands-list__item', 'Bravi')
       .click();
+
+    cy.wait('@gettingBrand');
     
-    cy.wait(10000);
+    //cy.wait(10000);
     
     cy.get('h1')
-      .should('contain.text', 'Bravi')
+      .should('contain.text', 'Bravi');
+
+    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
+
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/sprint-tl"]')
       .click();
 
-    cy.wait(3000);
+    cy.wait('@gettingProduct')
+    
+    //cy.wait(3000);
 
     cy.get('h1')
       .should('contain.text', 'Bravi Sprint TL')
@@ -82,20 +91,28 @@ describe('checking prices switcher with taxes and without', () => {
       .click();
     
     cy.wait(5000);
+
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
     cy.contains('.gr-brands-list__item', 'FA2')
       .click();
+
+    cy.wait('@gettingBrand')
     
-    cy.wait(10000);
+    //cy.wait(10000);
     
     cy.get('h1')
-      .should('contain.text', 'FA2')
+      .should('contain.text', 'FA2');
+
+    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/fa2-fall-protection-package"]')
       .click();
 
-    cy.wait(3000);
+    cy.wait('@gettingProduct');
+
+    //cy.wait(3000);
 
     cy.get('h1')
       .should('contain.text', 'FA2 Fall Protection Kit');
@@ -145,20 +162,28 @@ describe('checking prices switcher with taxes and without', () => {
       .click();
     
     cy.wait(5000);
+
+    cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
     
     cy.contains('.gr-brands-list__item', 'VMB')
       .click();
+
+    cy.wait('@gettingBrand');
     
-    cy.wait(10000);
+    //cy.wait(10000);
     
     cy.get('h1')
-      .should('contain.text', 'VMB')
+      .should('contain.text', 'VMB');
+
+    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/vmb-tower-lift-tl054"]')
       .click();
 
-    cy.wait(3000);
+    cy.wait('@gettingProduct');
+
+    //cy.wait(3000);
 
     cy.get('h1')
       .should('contain.text', 'VMB Tower Lift - TL054')
