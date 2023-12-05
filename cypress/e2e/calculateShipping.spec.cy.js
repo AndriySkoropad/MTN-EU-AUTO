@@ -288,7 +288,7 @@ describe('calculatig shipping', () => {
     });
 
     it('should send error message when the user tries to type invalid postcdoe', () => {
-        cy.visit('https://shopmtn.eu/products/copy-of-rock-exotica-akimbo-ascender');
+        cy.visit('https://shopmtn.eu/products/riggers-multi-tool');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
