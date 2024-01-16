@@ -36,19 +36,19 @@ describe('adding to the cart', () => {
 
     cy.intercept('GET', 'https://eu.app.mountainproductions.com/api/get_data?shop=mtn-shop-eu.myshopify.com*').as('gettingBrand');
 
-    cy.contains('.gr-brands-list__item', 'Camlok')
+    cy.contains('.gr-brands-list__item', 'Crewsaver')
       .click();
-    cy.assertPageUrl('/collections/camlok');
-    cy.contains('h1', 'Camlok')
+    cy.assertPageUrl('/collections/crewsaver');
+    cy.contains('h1', 'Crewsaver')
       .should('exist');
 
     cy.wait('@gettingBrand')
     
-    cy.contains('a[href="/products/yale-tkg-vhs-crane-forks"]','Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG')
+    cy.contains('a[href="/products/hansen-seacrewsader-275n-3d-fire-retardant-life-jacket-83220"]','Crewsaver Seacrewsader 275N 3D Fire Retardant Life Vest 83220')
       .click();
-    cy.assertPageUrl('/products/yale-tkg-vhs-crane-forks?variant=6125164298272');
+    cy.assertPageUrl('/products/hansen-seacrewsader-275n-3d-fire-retardant-life-jacket-83220?variant=46806193537366');
     cy.get('h1')
-      .should('contain.text', 'Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG');
+      .should('contain.text', 'Crewsaver Seacrewsader 275N 3D Fire Retardant Life Vest 83220');
     cy.get('.gr-product-media')
       .should('exist');
     cy.get('.gr-price__container')
@@ -73,7 +73,7 @@ describe('adding to the cart', () => {
       //.should('exist');
     //cy.contains('#checkout', 'Check out')
       //.should('exist');
-    cy.contains('.shopify-section', 'Camlok Crane Forks (TKG/VHS) 200kg - 5000 KG')
+    cy.contains('.shopify-section', 'Crewsaver Seacrewsader 275N 3D Fire Retardant Life Vest 83220')
       .should('exist');
     //cy.contains('.gr-link', 'Continue shopping')
       //.should('exist');

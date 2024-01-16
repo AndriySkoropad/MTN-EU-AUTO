@@ -29,10 +29,10 @@ describe('blog page', () => {
       cy.get('.gr-pagination__list')
         .should('exist');
   
-      cy.contains('.gr-article-card__heading', 'MTN SHOP Welcomes Grabo To The Family')
+      cy.contains('.gr-article-card__heading', 'KASK Helmets Get An Upgrade: Plasma Becomes SuperPlasma')
         .click();
   
-      cy.contains('h1', 'MTN SHOP Welcomes Grabo To The Family')
+      cy.contains('h1', 'KASK Helmets Get An Upgrade: Plasma Becomes SuperPlasma')
         .should('exist');
   
       cy.get('.gr-author-info')
