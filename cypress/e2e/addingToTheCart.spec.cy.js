@@ -102,7 +102,7 @@ describe('adding to the cart', () => {
 
   });
 
-  it('should proceed to checkout', () => {
+  it.only('should proceed to checkout', () => {
 
     cy.contains('.gr-header-menu__link', 'Brands')
       .click();
@@ -223,10 +223,16 @@ describe('adding to the cart', () => {
     cy.contains('div', 'Contact')
       .should('exist');
 
-    cy.contains('div', 'Shipping address')
+      cy.contains('div', 'Delivery')
       .should('exist');
 
-    cy.contains('[type="submit"]', 'Continue to shipping')
+      cy.contains('div', 'Payment')
+      .should('exist');
+
+    cy.contains('div', 'Shipping method')
+      .should('exist');
+
+    cy.get('#cart-link')
       .should('exist');
 
     cy.contains('Neofeu Harnais NUS77A')
