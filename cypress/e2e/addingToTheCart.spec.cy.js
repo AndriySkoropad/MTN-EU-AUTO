@@ -102,7 +102,7 @@ describe('adding to the cart', () => {
 
   });
 
-  it.only('should proceed to checkout', () => {
+  it('should proceed to checkout', () => {
 
     cy.contains('.gr-header-menu__link', 'Brands')
       .click();
