@@ -12,7 +12,7 @@ describe('should filter products', () => {
     
     });  
 
-    it.only('should filter by brand', () => {
+    it('should filter by brand', () => {
  
       cy.contains('.gr-header-menu__link', 'Tools & Lighting')
         .click();
