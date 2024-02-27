@@ -101,7 +101,7 @@ describe('should filter products', () => {
     
         cy.wait(5000);
     
-        cy.get('[data-name="Black / Lime"]')
+        cy.get('[data-name="Black / Red"]')
           .click();
     
         cy.get('div.gr-search-popup.gr-hidden')
@@ -110,11 +110,11 @@ describe('should filter products', () => {
     
         cy.wait(10000);
     
-        cy.contains('.gr-card-rich-product__heading', 'Arbortec Breatheflex Jacket')
+        cy.contains('.gr-card-rich-product__heading', 'Blaklader Polo Shirt')
           .click();
     
         cy.get('product-option')
-          .should('contain', 'Lime');
+          .should('contain', 'Black');
     
     });
 
