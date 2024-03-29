@@ -91,7 +91,7 @@ describe('should filter products', () => {
 
     });
 
-    it.only('should filter via the color', () => {
+    it('should filter via the color', () => {
 
         cy.contains('.gr-header-menu__link', 'Workwear')
           .click();
