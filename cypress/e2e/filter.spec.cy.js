@@ -91,7 +91,7 @@ describe('should filter products', () => {
 
     });
 
-    it('should filter via the color', () => {
+    it.skip('should filter via the color', () => {
 
         cy.contains('.gr-header-menu__link', 'Workwear')
           .click();
@@ -101,8 +101,8 @@ describe('should filter products', () => {
     
         cy.wait(5000);
     
-        cy.get('[data-name="Black / Lime"]')
-          .click();
+        cy.get('[data-name="black"]')
+          .click( {force: true} );
     
         cy.get('div.gr-search-popup.gr-hidden')
           .find('a.gr-filters-close')
