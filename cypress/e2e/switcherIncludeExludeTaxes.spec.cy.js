@@ -31,14 +31,14 @@ describe('checking prices switcher with taxes and without', () => {
     cy.get('h1')
       .should('contain.text', 'Bravi');
 
-    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
+    //cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
 
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/sprint-tl"]')
       .click();
 
-    cy.wait('@gettingProduct')
+    //cy.wait('@gettingProduct')
     
     //cy.wait(3000);
 
@@ -104,13 +104,13 @@ describe('checking prices switcher with taxes and without', () => {
     cy.get('h1')
       .should('contain.text', 'FA2');
 
-    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
+    //cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/fa2-fall-protection-package"]')
       .click();
 
-    cy.wait('@gettingProduct');
+    //cy.wait('@gettingProduct');
 
     //cy.wait(3000);
 
@@ -175,13 +175,13 @@ describe('checking prices switcher with taxes and without', () => {
     cy.get('h1')
       .should('contain.text', 'VMB');
 
-    cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
+    //cy.intercept('GET', '/search?view=products_json&*').as('gettingProduct');
     
     cy.get('div.gr-card-rich-product__details')
       .find('a[href="/products/vmb-tower-lift-tl054"]')
       .click();
 
-    cy.wait('@gettingProduct');
+    //cy.wait('@gettingProduct');
 
     //cy.wait(3000);
 

@@ -26,13 +26,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
 
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/baselight-wheel-attachment"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -71,13 +71,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
 
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/yale-zgr-35-1000-ratchet-lashing"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -116,13 +116,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
 
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/riggers-multi-tool"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -161,13 +161,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
 
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/edelrid-fuse"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -206,13 +206,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
     
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/lee-filter-241"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
@@ -256,13 +256,13 @@ describe('calculatig shipping', () => {
 
         cy.wait('@gettingBrand');
 
-        cy.intercept('GET', '/search?*').as('goToProductPage');
+        //cy.intercept('GET', '/search?*').as('goToProductPage');
     
         cy.get('div.gr-card-rich-product__details')
           .find('a[href="/products/phc-klever-x-change-w-double-head"]')
           .click();
 
-        cy.wait('@goToProductPage');
+        //cy.wait('@goToProductPage');
     
         cy.contains('.gr-summary__heading', 'Shipping calculator')
           .click();
