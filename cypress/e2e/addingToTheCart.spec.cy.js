@@ -232,7 +232,7 @@ describe('adding to the cart', () => {
     cy.contains('div', 'Shipping method')
       .should('exist');
 
-    cy.get('#cart-link')
+    cy.get('[href="https://shopmtn.eu/cart"]')
       .should('exist');
 
     cy.contains('Neofeu Harnais NUS77A')
