@@ -65,7 +65,7 @@ describe('should filter products', () => {
     
         cy.wait(5000);
     
-        cy.contains('.gr-checkbox-wrap', '9V')
+        cy.contains('.gr-checkbox-wrap', 'AA')
           .click({ force: true });
     
         cy.get('div.gr-search-popup.gr-hidden')
@@ -82,7 +82,7 @@ describe('should filter products', () => {
           cy.get('@productCard')
             .find('.gr-card-rich-product__heading')
             .invoke('text')
-            .should('include', '9V');
+            .should('include', 'AA');
         });
         
     });
@@ -101,7 +101,7 @@ describe('should filter products', () => {
     
         cy.wait(5000);
     
-        cy.get('[title="Black / Lime"]')
+        cy.get('[title="Blue"]')
           .click( {force: true} );
     
         cy.get('div.gr-search-popup.gr-hidden')
@@ -110,11 +110,11 @@ describe('should filter products', () => {
     
         cy.wait(10000);
     
-        cy.contains('.gr-card-rich-product__heading', 'Arbortec Breatheflex Jacket')
+        cy.contains('.gr-card-rich-product__heading', 'Dunlop Purofort Boots - FoodPro Multigrip')
           .click();
     
         cy.get('product-option')
-          .should('contain', 'Black');
+          .should('contain', 'Blue');
     
     });
 
@@ -128,7 +128,7 @@ describe('should filter products', () => {
     
         cy.wait(5000);
     
-        cy.contains('.gr-checkbox-wrap', 'MTN BOX')
+        cy.contains('.gr-checkbox-wrap', 'Hammer')
           .click({ force: true });
     
         cy.get('div.gr-search-popup.gr-hidden')
@@ -141,7 +141,7 @@ describe('should filter products', () => {
           cy.wrap(productCard)
             .find('.gr-card-rich-product__heading')
             .invoke('text')
-            .should('include', 'MTN BOX');
+            .should('include', 'Hammer');
         });
     
     });
