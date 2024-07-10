@@ -35,7 +35,7 @@ describe('checking prices switcher with taxes and without', () => {
 
     
     cy.get('div.gr-card-rich-product__details')
-      .find('a[href="/products/sprint-tl"]')
+      .find('a[href="/products/bravi-sprint-tl-new-version"]')
       .click();
 
     //cy.wait('@gettingProduct')
@@ -43,7 +43,7 @@ describe('checking prices switcher with taxes and without', () => {
     //cy.wait(3000);
 
     cy.get('h1')
-      .should('contain.text', 'Bravi Sprint TL')
+      .should('contain.text', 'Bravi Sprint TL New Version')
 
     let savedNumericPart; // Define the variable in a higher scope
 
