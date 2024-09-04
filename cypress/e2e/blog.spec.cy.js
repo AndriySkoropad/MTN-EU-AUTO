@@ -7,9 +7,15 @@ describe('blog page', () => {
   
       cy.wait(20000);
 
-      cy.get('[aria-label="Close dialog 1"]')
-        .click();
+      //cy.get('[aria-label="Close dialog 1"]')
+        //.click();
+
+      //cy.contains('#title-Close', 'Close dialog')
+        //.click();
   
+      cy.contains('button', 'NO, THANKS')
+        .click();
+
       cy.contains('.gr-footer__nav-link', 'BLOG')
         .click();
   
