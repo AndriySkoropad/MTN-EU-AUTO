@@ -10,6 +10,8 @@ describe('adding to the cart', () => {
   
     cy.get('[aria-label="Close dialog 1"]')
       .click();
+
+      
   });
 
   it('should check that cart is empty', () => {
