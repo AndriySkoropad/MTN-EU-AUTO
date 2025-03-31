@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+
 describe('adding to the cart', () => {
 
   beforeEach(() => {
